@@ -2,6 +2,7 @@ import { Button, Flex, Box } from "@chakra-ui/react";
 import React from "react";
 import FormSelect from "../../components/formComponents/FormSelect";
 import { useFormik } from "formik";
+import * as Yup from "yup";
 import { PageNumbers } from "../../interface/home";
 import { IInterViewSettings } from "../../interface/forms";
 import {
@@ -26,8 +27,17 @@ const InterviewDetailsForm: React.FC<{
       interviewDuration: "",
       interviewLanguage: "",
     },
+    validationSchema: Yup.object().shape({
+      interviewMode: Yup.string().required("interviewMode is required"),
+      interviewDuration: Yup.string()
+        .required("interviewDuration is required")
+        .typeError("Enter a valid number"),
+      interviewLanguage: Yup.string().required("interviewLanguage is required"),
+    }),
+
     onSubmit: (values) => {
       console.log({ values });
+      
       alert("Form successfully submitted");
     },
   });
