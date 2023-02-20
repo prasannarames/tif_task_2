@@ -1,3 +1,11 @@
+## Task-2 fixes:
+
+- Implemented validation part for Interview Settings using Yup
+- In Job details page an extra field was there, that causes error for move to the next page.
+
+
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
